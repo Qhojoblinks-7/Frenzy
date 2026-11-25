@@ -1,0 +1,157 @@
+export const CATEGORIES = [
+  { id: 'all', label: 'All Festive' },
+  { id: 'mains', label: 'Festive Mains' },
+  { id: 'swallows', label: 'Swallows' },
+  { id: 'rice', label: 'Rice & Waakye' },
+  { id: 'grill', label: 'Grill' },
+  { id: 'drinks', label: 'Drinks' },
+  { id: 'desserts', label: 'Desserts' },
+];
+
+export const MENU_ITEMS = [
+  {
+    id: 'festive-jollof-combo',
+    category: 'mains',
+    name: 'Festive Party Jollof & Grilled Chicken',
+    description: 'Smoky party jollof served with spiced grilled chicken, plantain, and coleslaw.',
+    price: 95,
+    image: '/images/jollof-chicken.webp',
+    available: true,
+    badge: 'Festive Special',
+    addOns: [
+      { id: 'extra-chicken', name: 'Extra Grilled Chicken', price: 35 },
+      { id: 'extra-shito', name: 'Extra Black Shito', price: 10 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'banku-tilapia',
+    category: 'swallows',
+    name: 'Banku & Grilled Tilapia',
+    description: 'Fermented corn dough served with whole grilled tilapia and pepper sauce.',
+    price: 120,
+    image: '/images/banku-tilapia.webp',
+    available: true,
+    addOns: [
+      { id: 'extra-fish', name: 'Extra Fish', price: 35 },
+      { id: 'extra-shito', name: 'Extra Black Shito', price: 10 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'fufu-goat',
+    category: 'swallows',
+    name: 'Fufu & Goat Light Soup',
+    description: 'Pounded cassava and plantain with spicy goat light soup.',
+    price: 135,
+    image: '/images/fufu-goat.webp',
+    available: true,
+    badge: 'Festive Special',
+    addOns: [
+      { id: 'extra-meat', name: 'Extra Goat Meat', price: 40 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'waakye-stew',
+    category: 'rice',
+    name: 'Waakye with Stew & Fish',
+    description: 'Rice and beans with stew, spaghetti, gari, boiled egg, and fish.',
+    price: 90,
+    image: '/images/waakye.webp',
+    available: true,
+    addOns: [
+      { id: 'egg', name: 'Boiled Egg', price: 10 },
+      { id: 'fish', name: 'Fried Fish', price: 30 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'festive-fried-rice',
+    category: 'rice',
+    name: 'Festive Fried Rice',
+    description: 'Special fried rice with mixed vegetables, chicken, and prawns.',
+    price: 110,
+    image: '/images/fried-rice.webp',
+    available: true,
+    addOns: [
+      { id: 'extra-chicken', name: 'Extra Grilled Chicken', price: 35 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'spicy-suya',
+    category: 'grill',
+    name: 'Spicy Beef Suya',
+    description: 'Grilled spiced beef skewers with onions and cabbage.',
+    price: 80,
+    image: '/images/suya.webp',
+    available: true,
+    addOns: [
+      { id: 'extra-suya', name: 'Extra Suya Skewer', price: 25 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'chicken-kebab',
+    category: 'grill',
+    name: 'Chicken Kebab Plate',
+    description: 'Grilled chicken kebabs with fries, salad, and garlic sauce.',
+    price: 100,
+    image: '/images/kebab.webp',
+    available: true,
+    addOns: [
+      { id: 'fries', name: 'Fries', price: 20 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'sobolo',
+    category: 'drinks',
+    name: 'Hibiscus Sobolo',
+    description: 'Chilled hibiscus drink with ginger and pineapple.',
+    price: 25,
+    image: '/images/sobolo.webp',
+    available: true,
+    addOns: [],
+  },
+  {
+    id: 'zobo',
+    category: 'drinks',
+    name: 'Zobo Drink',
+    description: 'Refreshing zobo with natural fruit flavors.',
+    price: 25,
+    image: '/images/zobo.webp',
+    available: true,
+    addOns: [],
+  },
+  {
+    id: 'kelewele',
+    category: 'desserts',
+    name: 'Spicy Kelewele',
+    description: 'Fried sweet plantain with ginger and pepper spice.',
+    price: 45,
+    image: '/images/kelewele.webp',
+    available: true,
+    addOns: [
+      { id: 'groundnut', name: 'Groundnut', price: 10 },
+      { id: 'chilled-drink', name: 'Chilled Drink', price: 15 },
+    ],
+  },
+  {
+    id: 'bofrot',
+    category: 'desserts',
+    name: 'Bofrot (Puff Puff)',
+    description: 'Golden fried dough balls, lightly sugared.',
+    price: 30,
+    image: '/images/bofrot.webp',
+    available: true,
+    addOns: [],
+  },
+];
+
+export const getItemById = (id) => MENU_ITEMS.find((item) => item.id === id);
+export const getCategoryLabel = (id) => {
+  const cat = CATEGORIES.find((c) => c.id === id);
+  return cat ? cat.label : id;
+};
